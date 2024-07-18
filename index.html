@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Academia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* Estilo para o botão de remover aluno */
+        .remove-button {
+            margin-left: 10px;
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .remove-button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gerenciador de Academia</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="mostrarConteudo('faturamento')">Faturamento</a></li>
+                <li><a href="#" onclick="mostrarConteudo('alunos')">Alunos</a></li>
+                <li><a href="#" onclick="mostrarConteudo('gastos')">Gastos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="faturamento">
+            <h2>Faturamento</h2>
+            <p id="faturamentoTotal">Total: R$ 0</p>
+        </section>
+
+        <section id="alunos" style="display: none;">
+            <h2>Alunos</h2>
+            <form id="alunoForm">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="dataContrato">Data de Vencimento do Contrato:</label>
+                <input type="date" id="dataContrato" name="dataContrato" required>
+                <label for="taxaMensal">Taxa Mensal:</label>
+                <input type="number" id="taxaMensal" name="taxaMensal" required>
+                <button type="submit">Adicionar Aluno</button>
+            </form>
+            <ul id="alunoList"></ul>
+        </section>
+
+        <section id="gastos" style="display: none;">
+            <h2>Gastos</h2>
+            <form id="gastoForm">
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao" required>
+                <label for="valorGasto">Valor:</label>
+                <input type="number" id="valorGasto" name="valorGasto" required>
+                <button type="submit">Adicionar Gasto</button>
+            </form>
+            <ul id="gastoList"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 </p>
+    </footer>
+</body>
+</html>
